@@ -1,0 +1,173 @@
+.watch-history {
+	height: 220px;
+    width: 100%;
+    background: whitesmoke;
+    margin: 3em 0 2em 0;
+    overflow: hidden;
+    position: relative;
+    padding:15px;
+}
+.transform {
+  -webkit-transition: all 1.5s ease;  
+  -moz-transition: all 1.5s ease;  
+  -o-transition: all 1.5s ease;  
+  -ms-transition: all 1.5s ease;  
+  transition: all 1.5s ease;
+}
+.transform-active {
+  min-height: 80vh;
+  overflow: auto;
+}
+.expand-icon {
+  position: absolute;
+  bottom: 7px;
+  left: 49%;
+  border: none;
+  border-radius: 50%;
+  background: #FDD877;
+  outline: none;
+}
+.arrow {
+	color: white;
+}
+.card {
+	height: 130px;
+	padding: 0.5%;
+	margin-top: 0.9em;
+	margin-bottom: 1em;
+}
+.card-content {
+	
+	height: 99%;
+}
+.card-image {
+	border: 1px solid black;
+	height: 99%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.card-description {
+	height: 99%;
+	background: white;
+}
+/*.card-wrapper {
+	height: 100px;
+}*/
+.card-description {
+
+    padding: 10px 15px 15px 20px;
+}
+.tab-content {
+	padding: 1em 0 1em 0;
+}
+
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+.all-course {
+  padding:15px;
+}
+
+#tab1 {
+  min-height:890px;
+}
+
+#tab2 {
+	min-height:820px;
+	padding: 1em;
+	margin-top:3em;
+}
+
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+    z-index: 10000;
+    width: 107%;
+    position: relative;
+}
+div.gallery:hover > .course-text {
+    display: block;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 13px;
+    text-align: center;
+}
+.course-text {
+	display: block;
+}
+.course-text: hover {
+	display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+.carousel-control {
+	top: 5em !important;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 5.5px 0;
+    }
+    .carousel-control {
+      top: 8em !important;
+	  font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+    .carousel-control {
+      font-size: 16px;
+	  top: 8em !important;
+    }
+}
+
+
+.card-wrapper {
+	margin: 50px;
+}
+
+.card-wrapper > img {
+	height: 200px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.cardContent {
+	width: 300px;
+	height: 200px;
+	background: lightgrey;
+	padding: 20px;
+	box-shadow: border-box;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.carousel-control {
+	z-index: 10000000;
+}
+
+.course-text {
+   display:none;  
+ }
+

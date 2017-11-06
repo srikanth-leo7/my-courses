@@ -1,20 +1,79 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="navbar navbar-inverse header navbar-fixed-top" role="navigation">
+  <div class="container">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#tab1" data-toggle="tab">Tab 1</a></li>
+      <li><a href="#tab2" data-toggle="tab">Tab 2</a></li>
+    </ul>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<div class="container-fluid">
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="watch-history transform">
+        <div class="content">
+          <h4 style="margin-bottom:0;margin-left:0.5em">Continue Watching</h4>
+          <div *ngFor="let watchItem of watchHistoryItems" class="card col-xs-12 col-sm-6 col-md-6">
+            <div class="card-content">
+              <div class="card-image col-xs-5 col-sm-5 col-md-5">
+                <img src="../assets/images/course.jpg" style="height:100%;width:100%"/>
+              </div>
+              <div class="card-description col-xs-7 col-sm-7 col-md-7">
+                <h5 style="margin-top:5px">{{watchItem.title}}</h5>
+                <p style="height:50px;font-size:12px;overflow: hidden;">{{watchItem.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="expand-icon" (click)="resizeWatchHistory()"><span class="glyphicon glyphicon-chevron-down arrow" aria-hidden="true"></span></button>
+      </div>
+      <div class="all-courses">
+        <h4 style="margin-left:1.3em">All My Courses</h4>
+        <div *ngFor="let course of allCourses; let k = index" class="col-md-12">
+          <h5 style="margin-left:0.5em">{{course.title}}</h5>
+          <div [attr.id]="'carousel-example-generic-' + k" style="margin-top:1em;margin-bottom:1em" class="carousel slide" data-interval="false" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li [attr.data-target]="'#carousel-example-generic-' + k" data-slide-to="0" class="active"></li>
+              <li [attr.data-target]="'#carousel-example-generic-' + k" data-slide-to="1"></li>
+              <li [attr.data-target]="'#carousel-example-generic-' + k" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div *ngFor="let item of course.calculatedValues; let i = index" class="item" [ngClass]="{'active': i === 0}">
+                <!--<div class="row">-->
+                <div *ngFor="let slide of item" class="responsive">
+                  <div class="gallery">
+                    <a target="_blank" href="img_fjords.jpg">
+                      <img src="../assets/images/course.jpg" alt="Trolltunga Norway" width="300" height="200">
+                    </a>
+                    <div class="desc">
+                      <h4>{{slide.name}}</h4>
+                      <p class="course-text" style="margin-right:1em; padding-left: 7px;
+                      padding-right: 6px">{{slide.description}}</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" [attr.href]="'#carousel-example-generic-' + k" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" [attr.href]="'#carousel-example-generic-' + k" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>{{dummyText}}</p>
+    </div>
+  </div>
+  <div class="navbar navbar-inverse footer navbar-fixed-bottom" role="navigation">
+    <div class="container">
+      <p> </p>
+    </div>
+  </div>

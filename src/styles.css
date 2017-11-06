@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.header, .footer {
+	background: #7B60C4;
+}
+.nav-pills {
+	text-align: center;
+	border-bottom: none;
+}
+.nav-pills > li {
+	float: none;
+	display: inline-block;
+}
+.nav > li > a {
+	color: rgb(255, 255, 255);
+	border-radius:0px;
+}
+.nav > li > a:hover {
+	background: transparent;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+	color: rgb(255, 255, 255);
+    background-color: transparent;
+    border-bottom: 1px solid yellow;
+}
+ul {
+	margin: 1em 0 0 0;
+}
